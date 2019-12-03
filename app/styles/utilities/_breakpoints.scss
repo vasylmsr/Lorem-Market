@@ -1,0 +1,16 @@
+$breakpoints: (
+  'super-small': (max-width: 500px),
+  'small': (max-width: 640px),
+  'large': (min-width: 641px)
+);
+
+@mixin respond-to($name) {
+  @if map-has-key($breakpoints, $name) {
+    @media screen and #{map-get($breakpoints, $name)} {
+      @content
+    }
+  }
+  @else {
+    @warn "We don`t have `#{$name}` value"
+  }
+}

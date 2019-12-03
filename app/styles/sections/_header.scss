@@ -1,0 +1,143 @@
+@import "../utilities/variables";
+.header {
+  background-image: url('../assets/images/bg.png');
+  background-size: cover;
+  height: 500px;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 14px 13px;
+}
+
+
+.slide {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+
+  &__content-wrapper {
+    //flex-grow: 0.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__image-wrapper {
+    margin: auto 0;
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__title, &__description {
+    font-family: $segoeWP;
+    color: white;
+    font-weight: 300;
+  }
+
+  &__title {
+    font-size: 42px;
+    line-height: 50px;
+  }
+
+  &__description {
+    font-size: 26px;
+    line-height: 44.42px;
+  }
+
+  &__button-wrapper {
+    display: flex;
+    margin-top: 34px;
+  }
+}
+
+.btn {
+  display: flex;
+  padding: 9px 11px;
+  font-family: $segoeWP;
+  color: white;
+
+  &__text {
+    margin-left: 11px;
+    height: 22px;
+    font-size: 22px;
+    margin-top: -4px;
+  }
+
+  &__icon-wrapper {
+    width: 23px;
+    height: 23px;
+    background: white;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.btn-primary {
+  background: $blue;
+}
+
+
+
+.check {
+  fill: $blue;
+  width: 12px;
+  height: 12px;
+}
+
+@include respond-to(small) {
+  .header {
+    height: 350px;
+  }
+
+  .slide {
+    &__title {
+      font-size: 30px;
+      line-height: 45px;
+    }
+
+    &__description {
+      font-size: 23px;
+      line-height: 40px;
+    }
+
+    &__image {
+      max-width: 177px;
+    }
+  }
+
+  .btn {
+    &__text {
+      height: 30px;
+      font-size: 30px;
+      margin-top: -4px;
+    }
+
+    &__icon-wrapper {
+      width: 31px;
+      height: 31px;
+    }
+  }
+}
+
+@include respond-to(super-small) {
+  .header {
+    height: fit-content;
+    padding: 15px 10px;
+  }
+
+  .slide {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &__content-wrapper {
+      text-align: center;
+      align-items: center;
+    }
+  }
+
+
+}

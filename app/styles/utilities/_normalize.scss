@@ -1,0 +1,28 @@
+body,
+div,
+p,
+ul,
+li,
+h1,
+h2,
+h3,
+nav {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+button {
+  outline: none;
+  border: none;
+}

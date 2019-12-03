@@ -1,0 +1,156 @@
+.l-container {
+  width: 80%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 89px;
+  background: white;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  $logoSize: 44px;
+  width: $logoSize;
+  height: $logoSize;
+  border-radius: 50%;
+  background: $blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo__inner {
+  margin-top: 30px;
+  color: white;
+  font-size: 75px;
+  font-family: $sansPro;
+}
+
+
+.logo__text-wrapper {
+  margin-left: 15px;
+}
+
+.logo__text {
+  font-size: 42px;
+  font-family: $segoeWP;
+  font-weight: 300;
+}
+
+.menu {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+
+  $linkFontSize: 20px;
+  $itemBorderBottomSize: 2px;
+  $itemPaddingBottom: 19px;
+
+  &__item {
+    margin: 0 15px;
+    padding-bottom: $itemPaddingBottom;
+    height: calc(#{$linkFontSize}
+                + #{$itemBorderBottomSize}
+                + #{$itemPaddingBottom});
+
+    &_active {
+      border-bottom: $itemBorderBottomSize solid $blue;
+    }
+  }
+
+  &__link {
+    color: $grey;
+    font-size: $linkFontSize;
+    font-family: $segoeWPN;
+  }
+}
+
+.button-open {
+  width: 58px;
+  height: 44px;
+  background-color: $blue;
+  border-radius: 2px;
+  justify-content: center;
+  align-items: center;
+}
+
+%button-open__line {
+  width: 37px;
+  height: 7px;
+  background: white;
+}
+.button-open__line {
+  @extend %button-open__line;
+
+  &::before, &::after {
+    @extend %button-open__line;
+    display: block;
+    content:'';
+  };
+
+  &::before {
+    transform: translateY(-12px);
+  }
+
+  &::after {
+    transform: translateY(6px);
+  }
+
+}
+
+@include respond-to(large) {
+  .button-open {
+    display: none;
+  }
+}
+@include respond-to(small) {
+  .l-container {
+    width: 100%;
+    padding: 0 30px;
+  }
+
+  .button-open {
+    display: flex;
+  }
+
+  .menu {
+    position: absolute;
+    //top: calc(-170px + 89px);
+    top: -300px;
+    z-index: 2;
+    height: auto;
+    align-items: baseline;
+    flex-direction: column;
+    transition-duration: 0.5s; /* we use it, when show or hide menu */
+    /* set some menu properties like section wrapper */
+    left: 0;
+    width: 100%;
+
+    &__item {
+      margin: 0;
+      background: ghostwhite;
+      width: 100%;
+      padding: 0 30px;
+    }
+  }
+
+  .menu.menu_opened {
+    top: 89px;
+  }
+}
+
+@include respond-to(super-small) {
+  .l-container {
+    width: 100%;
+    padding: 0 10px;
+  }
+}

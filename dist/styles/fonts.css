@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Segoe WP N';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Segoe WP N"), url("../assets/fonts/SegoeWPN.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Segoe WP';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Segoe WP"), url("../assets/fonts/SegoeWP.woff") format("woff"); }
