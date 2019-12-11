@@ -2,6 +2,8 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const debug = require('gulp-debug');
 const del = require('del');
+const replace = require('gulp-replace');
+
 const browserSync = require('browser-sync').create();
 
 gulp.task('sass', function(){
@@ -13,6 +15,7 @@ gulp.task('sass', function(){
 
 gulp.task('html', function() {
     return gulp.src('app/**/*.html')
+        .pipe(replace('../assets', 'assets')) // find ../assets in any paths and replace in assets
         .pipe(gulp.dest('dist'));
 });
 

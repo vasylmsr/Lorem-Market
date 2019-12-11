@@ -20,7 +20,9 @@
     flex-direction: column;
     justify-content: center;
   }
-
+  &__content-wrapper, &__image-wrapper {
+    padding: 0 10px;
+  }
   &__image-wrapper {
     margin: auto 0;
   }
