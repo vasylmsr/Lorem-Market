@@ -15,7 +15,7 @@ gulp.task('sass', function(){
 
 gulp.task('html', function() {
     return gulp.src('app/**/*.html')
-        .pipe(replace('../assets', 'assets')) // find ../assets in any paths and replace in assets
+        .pipe(replace('../assets', 'assets')) // find out "../assets" paths and replace by "assets"
         .pipe(gulp.dest('dist'));
 });
 
