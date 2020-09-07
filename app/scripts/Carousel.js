@@ -1,8 +1,8 @@
 class Carousel {
-  constructor(carousel) {
-    this.carousel = carousel.querySelector('.carousel');
-    this.carouselSlides = this.carousel.querySelector('.carousel__slides');
-    this.slidesCount = this.carouselSlides.childElementCount;
+  constructor(domElement) {
+    this.carousel = domElement.querySelector('.carousel');
+    this.carouselSlidesElement = this.carousel.querySelector('.carousel__slides');
+    this.slidesCount = this.carouselSlidesElement.childElementCount;
     this.leftButton = this.carousel.querySelector('.carousel-arrow_left');
     this.rightButton = this.carousel.querySelector('.carousel-arrow_right');
 
@@ -11,11 +11,11 @@ class Carousel {
   }
 
   get carouselMargin() {
-    return parseInt(this.carouselSlides.style.marginLeft) || 0;
+    return parseInt(this.carouselSlidesElement.style.marginLeft) || 0;
   }
 
   move(margin) {
-    this.carouselSlides.style.marginLeft = this.carouselMargin + margin + "%";
+    this.carouselSlidesElement.style.marginLeft = this.carouselMargin + margin + "%";
   }
 
   moveLeft() {
